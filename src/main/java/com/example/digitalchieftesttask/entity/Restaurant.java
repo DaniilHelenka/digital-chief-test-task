@@ -24,7 +24,7 @@ public class Restaurant {
     private String phone_number;
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Dish> books = new ArrayList<>();
+    private List<Dish> dishes = new ArrayList<>();
 
 
 
