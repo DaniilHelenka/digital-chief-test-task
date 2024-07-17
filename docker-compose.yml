@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+
+  food-delivery:
+    image: digital-chief:latest
+    container_name: digital-chief
+    depends_on:
+      database:
+        condition: service_started
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/database
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 123
+
+  database:
+    container_name: database
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: database
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
