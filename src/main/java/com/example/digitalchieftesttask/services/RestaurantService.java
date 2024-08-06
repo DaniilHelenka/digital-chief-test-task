@@ -59,7 +59,7 @@ public class RestaurantService {
             throw new SameNameException(HttpStatus.CONFLICT, "Restaurant with the same first name and last name already exists.", ex);
         }
     }
-    public void deleteAuthor(Long id) {
+    public void deleteRestaurant(Long id) {
        restaurantRepository.deleteById(id);
     }
 }
