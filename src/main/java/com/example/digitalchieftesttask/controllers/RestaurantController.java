@@ -34,7 +34,7 @@ public class RestaurantController {
     }
 
     @PostMapping
-    public ResponseEntity<RestaurantDTO> createAuthor(@RequestBody @Valid CreateRestaurantDTO createRestaurantDTO) {
+    public ResponseEntity<RestaurantDTO> createRestaurant(@RequestBody @Valid CreateRestaurantDTO createRestaurantDTO) {
         RestaurantDTO restaurantDTO = restaurantService.createRestaurant(createRestaurantDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(restaurantDTO);
     }
