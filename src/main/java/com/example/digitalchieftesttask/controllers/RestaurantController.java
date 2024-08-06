@@ -46,7 +46,7 @@ public class RestaurantController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteAuthor(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteRestaurant(@PathVariable Long id) {
         restaurantService.deleteAuthor(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
